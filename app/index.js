@@ -13,6 +13,11 @@ const routes = [
     name: 'index',
     component: Index,
   },
+  // {
+  //   path: '/new',
+  //   name: 'new',
+  //   component: New,
+  // },
 ];
 
 const router = new VueRouter({
