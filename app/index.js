@@ -4,6 +4,7 @@ import VueRouter from 'vue-router';
 
 import App from './routes/application.vue';
 import Index from './routes/index.vue';
+import New from './routes/new.vue';
 
 Vue.use(VueRouter);
 
@@ -13,11 +14,11 @@ const routes = [
     name: 'index',
     component: Index,
   },
-  // {
-  //   path: '/new',
-  //   name: 'new',
-  //   component: New,
-  // },
+  {
+    path: '/new',
+    name: 'new',
+    component: New,
+  },
 ];
 
 const router = new VueRouter({
