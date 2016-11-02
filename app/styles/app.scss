@@ -10,7 +10,8 @@ $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 .nav {
   background: $c-blue;
 
-  &-item a {
+  &-item a,
+  a.nav-item {
     color: $white-bis;
   }
 }
