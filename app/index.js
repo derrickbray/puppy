@@ -5,7 +5,7 @@ import VueRouter from 'vue-router';
 import App from './routes/application.vue';
 import Index from './routes/index.vue';
 import New from './routes/new.vue';
-import Detail from '.routes/new.vue';
+import Detail from './routes/detail.vue';
 
 Vue.use(VueRouter);
 

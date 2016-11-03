@@ -1,14 +1,14 @@
 // @import 'yoga-sass/assets/yoga';
 // @import 'normalize-css/normalize';
-$c-blue: hsl(217, 71%, 53%);
-$c-primary: $c-blue;
+$blue: hsl(217, 71%, 53%);
+$primary: $blue;
 @import 'bulma/bulma';
 $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 @import 'font-awesome/scss/font-awesome';
 @import 'box-sizing';
 
 .nav {
-  background: $c-blue;
+  background: $blue;
 
   &-item a,
   a.nav-item {
@@ -19,4 +19,8 @@ $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 .is-brand {
   font-size: 1.2rem;
   font-weight: normal;
+}
+
+.button {
+  background: $primary;
 }
