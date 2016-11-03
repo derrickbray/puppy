@@ -32,14 +32,18 @@
           </div>
         </div>
         <div class="column">
-          <router-view
-            :puppies="puppies"
-            :api-url="apiUrl"
-            @addPuppy="addPuppy"
-            @removePuppy="removePuppy"
-            @updatePuppy="updatePuppy"
-            >
-          </router-view>
+          <div class="is-relative">
+            <transition name="fade">
+              <router-view
+                :puppies="puppies"
+                :api-url="apiUrl"
+                @addPuppy="addPuppy"
+                @removePuppy="removePuppy"
+                @updatePuppy="updatePuppy"
+                >
+              </router-view>
+            </transition>
+          </div>
         </div>
       </div>
     </div>

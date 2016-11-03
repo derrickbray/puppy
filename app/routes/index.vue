@@ -1,6 +1,8 @@
 <template lang="html">
   <div class="">
-    <a class="button is-primary is-pulled-right">Add a Pupper</a>
+    <router-link :to="{ name: 'new' }" class="button is-primary is-pulled-right">
+      Add a Pupper
+    </router-link>
     <h1 class="title">Puppies for Adoption</h1>
     <table  class="table">
       <thead>

@@ -9,20 +9,27 @@
 
 <script>
 export default {
+  props: ['apiUrl'],
+
   data() {
     return {
       id: this.$route.params.id,
-      puppies: {},
+      puppy: {},
     };
   },
 
-mounted() {
-  this.loadData();
-},
+  mounted() {
+    this.loadData();
+  },
+
+  watch: {
+    // call again the method if the route changes
+    '$route': 'loadData',
+  },
 
   methods: {
     loadData() {
-      fetch(`${this.apiUrl}/${this.id}`)
+      fetch(`${this.apiUrl}/${this.$route.params.id}`)
         .then((r) => r.json())
         .then((puppy) => {
           this.puppy = puppy;
