@@ -15,16 +15,17 @@
         <div class="column is-4">
           <div class="panel">
             <p class="panel-heading">Adopt a Pupper</p>
-            <div class="panel-block is-active">
+            <div class="panel-block is-active" v-for="puppy in puppies">
               <div class="media">
                  <div class="media-left">
-                     <figure class="image is-64x64">
-                       <img src="http://www.fillmurray.com/g/140/100" alt="">
-                     </figure>
+                    <figure class="image is-64x64">
+                      <img :src="puppy.image_url" alt="">
+                    </figure>
                   </div>
-                  <div class="">
-                     <h2 class="subtitle">Name</h2>
-                    <router-link :to="{ name: 'new' }" class="nav-item">Read More</router-link>
+                  <div class="media-content">
+                    <h2 class="subtitle">{{ puppy.name }}</h2>
+                    <router-link :to="{ name: 'detail', params: {id:puppy.id} }">Read More</router-link>
+
                  </div>
                </div>
             </div>
@@ -34,9 +35,9 @@
           <router-view
             :puppies="puppies"
             :api-url="apiUrl"
-            <!-- @addPuppy="addPuppy"
+            @addPuppy="addPuppy"
             @removePuppy="removePuppy"
-            @updatePuppy="updatePuppy" -->
+            @updatePuppy="updatePuppy"
             >
           </router-view>
         </div>
@@ -47,23 +48,32 @@
 
 <script>
 import IndexPage from './index.vue'
-const apiUrl = `http://tiy-tn-class-api-fall-16.herokuapp.com/puppies/ryan`;
+
+const apiUrl = 'http://tiy-tn-class-api-fall-16.herokuapp.com/puppies/ryan';
 export default {
   data() {
     return {
       apiUrl,
       puppies: [],
+
     };
+  },
+
+  mounted() {
+    this.getData();
   },
 
   methods: {
     getData() {
-    fetch(apiUrl)
-      .then((r) => r.json())
-      .then((puppies) => {
-        this.puppies = puppies;
-      });
+      fetch(apiUrl)
+        .then((r) => r.json())
+        .then((puppies) => {
+          this.puppies = puppies;
+        });
     },
+    addPuppy() {},
+    removePuppy() {},
+    updatePuppy() {},
   },
 };
 </script>
