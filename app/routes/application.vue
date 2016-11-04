@@ -93,7 +93,14 @@ export default {
           });
         });
     },
-    removePuppy() {},
+    removePuppy(puppies) {
+    fetch(`${apiUrl}/${lunchSpot.id}`, {
+      method: 'DELETE',
+    }).then(() => {
+        this.puppies = this.puppies.filter((old) => old.id !== puppy.id);
+        this.$router.push({name: 'index'});
+      });
+  },
     updatePuppy() {},
   },
 };

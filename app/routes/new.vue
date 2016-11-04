@@ -5,19 +5,19 @@
 
     <label class="label">Name</label>
       <p class="control">
-        <input class="input" type="text">
+        <input class="input" type="text" v-model="formValues.name">
       </p>
 
     <label class="label">Age</label>
       <p class="control ">
-        <input class="input" type="text" >
+        <input class="input" type="text" v-model="formValues.age">
       </p>
 
     <label class="label">Sex</label>
       <p class="control">
-        <span class="select">
-          <select>
-            <option>Select dropdown</option>
+        <span class="select is-fullwidth">
+          <select  v-model="formValues.sex">
+            <option value="">Select dropdown</option>
             <option>Female</option>
             <option>Male</option>
           </select>
@@ -26,22 +26,22 @@
 
     <label class="label">Color</label>
       <p class="control">
-        <input class="input" type="text" >
+        <input class="input" type="text" v-model="formValues.color">
       </p>
 
     <label class="label">Breed</label>
       <p class="control">
-        <input class="input" type="text" >
+        <input class="input" type="text" v-model="formValues.breed">
       </p>
 
     <label class="label">Image URL</label>
       <p class="control">
-        <input class="input" type="text" >
+        <input class="input" type="text" v-model="formValues.image_url">
       </p>
 
     <label class="label">Description</label>
       <p class="control">
-        <textarea class="textarea"></textarea>
+        <textarea v-model="formValues.description" class="textarea"></textarea>
       </p>
 
       <p class="control">

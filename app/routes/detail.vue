@@ -2,7 +2,7 @@
   <div class="">
     <div class="detail__head">
       <h1 class="title">{{puppy.name}}</h1>
-
+      <button class="danger" @click="removePuppy">Remove Puppy</button>
     </div>
   </div>
 </template>
@@ -35,8 +35,15 @@ export default {
           this.puppy = puppy;
         })
         .catch(() => {
-          this.$router.push({name: 'index'});
+          this.$router.push({
+            name: 'index'
+          });
         });
+    },
+    removePuppy() {
+      if (confirm('Are you sure?')) {
+        this.$emit('delete', this.puppy);
+      }
     },
   },
 };
