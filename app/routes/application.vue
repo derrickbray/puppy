@@ -94,14 +94,22 @@ export default {
         });
     },
     removePuppy(puppies) {
-    fetch(`${apiUrl}/${lunchSpot.id}`, {
-      method: 'DELETE',
-    }).then(() => {
-        this.puppies = this.puppies.filter((old) => old.id !== puppy.id);
-        this.$router.push({name: 'index'});
+      fetch(`${apiUrl}/${puppies.id}`, {
+        method: 'DELETE',
+      }).then(() => {
+          this.puppies = this.puppies.filter((old) => old.id !== puppies.id);
+          this.$router.push({name: 'index'});
+        });
+    },
+    updatePuppy(id, formValues) {
+      fetch(`${apiUrl}/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formValues),
       });
-  },
-    updatePuppy() {},
+    },
   },
 };
 </script>
