@@ -53,7 +53,7 @@
 <script>
 import IndexPage from './index.vue'
 
-const apiUrl = 'http://tiy-tn-class-api-fall-16.herokuapp.com/puppies/ryan';
+const apiUrl = 'http://tiy-tn-class-api-fall-16.herokuapp.com/puppies/derrick';
 export default {
   data() {
     return {
@@ -75,7 +75,24 @@ export default {
           this.puppies = puppies;
         });
     },
-    addPuppy() {},
+
+    addPuppy(input) {
+      fetch(apiUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(input),
+        })
+        .then((r) => r.json())
+        .then((puppy) => {
+          this.puppies = [puppy, ...this.puppies];
+
+          this.$router.push({
+            name: 'index'
+          });
+        });
+    },
     removePuppy() {},
     updatePuppy() {},
   },
