@@ -59,7 +59,7 @@ export default {
     return {
       apiUrl,
       puppies: [],
-
+      path: window.location.pathname,
     };
   },
 

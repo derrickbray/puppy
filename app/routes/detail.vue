@@ -2,13 +2,15 @@
   <div class="">
     <div class="detail__head">
       <h1 class="title has-text-centered">{{ puppy.name }}</h1>
-      <button class="button is-danger" @click="removePuppy">Remove Puppy</button>
-      <template v-if="puppy.adopted">
-        <button class="button is-primary">I'm Adopted!</button>
-      </template>
-      <template v-else>
-        <button class="button is-primary" @click="adopt">Adopt Me</button>
-      </template>
+      <div class="has-text-centered">
+        <button class="button is-danger" @click="removePuppy">Remove Puppy</button>
+        <template v-if="puppy.adopted">
+          <button class="button is-primary">I'm Adopted!</button>
+        </template>
+        <template v-else>
+          <button class="button is-primary" @click="adopt">Adopt Me</button>
+        </template>
+      </div>
       <div class="card is-fullwidth">
           <div class="card-image">
             <figure class="image is-4by3">
@@ -88,6 +90,9 @@ export default {
       }
     },
     adopt() {
+      this.$router.push({
+        name: 'index'
+      });
       this.$emit('updatePuppy', this.puppy.id, { adopted: true });
     },
   },
