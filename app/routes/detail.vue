@@ -8,8 +8,8 @@
           <button class="button is-primary">I'm Adopted!</button>
         </template>
         <template v-else>
-          <button class="button is-primary" @click="adopt">Adopt Me</button>
-        </template>
+<button class="button is-primary" @click="adopt">Adopt Me</button>
+</template>
       </div>
       <div class="card is-fullwidth">
           <div class="card-image">
@@ -53,7 +53,8 @@
 
 <script>
 export default {
-  props: ['apiUrl'],
+  props: ['apiUrl', 'puppies'],
+
 
   data() {
     return {
@@ -93,7 +94,9 @@ export default {
       this.$router.push({
         name: 'index'
       });
-      this.$emit('updatePuppy', this.puppy.id, { adopted: true });
+      this.$emit('updatePuppy', this.puppy.id, {
+        adopted: true
+      });
     },
   },
 };
