@@ -27,9 +27,9 @@
               <img :src="puppy.image_url" alt="">
             </figure>
           </div>
-          <div class="card-content">
-            <div class="media">
-              <div class="media-content">
+          <div class="card-content is-fullwidth">
+            <div class="media is-fullwidth">
+              <div class="media-content is-fullwidth">
                 <nav class="level">
                   <div class="level-item has-text-centered">
                     <p class="heading">Age</p>
