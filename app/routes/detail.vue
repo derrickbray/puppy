@@ -5,13 +5,23 @@
       <div class="has-text-centered">
         <button class="button is-danger" @click="removePuppy">Remove Puppy</button>
         <template v-if="puppy.adopted">
-          <button class="button is-primary">I'm Adopted!</button>
+          <button class="button is-success">
+            <span class="icon">
+              <i class="fa fa-paw"></i>
+            </span>
+            <span>I'm Adopted</span>
+          </button>
         </template>
         <template v-else>
-<button class="button is-primary" @click="adopt">Adopt Me</button>
-</template>
+          <button class="button is-primary" @click="adopt">
+          <span class="icon">
+            <i class="fa fa-paw"></i>
+          </span>
+          <span>Adopt me</span>
+        </button>
+        </template>
       </div>
-      <div class="card is-fullwidth">
+      <div class="column is-half is-offset-3">
           <div class="card-image">
             <figure class="image is-4by3">
               <img :src="puppy.image_url" alt="">
