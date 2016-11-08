@@ -27,11 +27,11 @@
               <img :src="puppy.image_url" alt="">
             </figure>
           </div>
-          <div class="card-content is-fullwidth">
-            <div class="media is-fullwidth">
-              <div class="media-content is-fullwidth">
+        </div>
+
+
                 <nav class="level">
-                  <div class="level-item has-text-centered">
+                  <div class="level-item">
                     <p class="heading">Age</p>
                     <p class="title">{{ puppy.age }}</p>
                   </div>
@@ -48,15 +48,13 @@
                     <p class="title">{{ puppy.sex }}</p>
                   </div>
                 </nav>
-              </div>
-            </div>
 
-            <div class="content">
-              <p class="heading is-centered">About Me</p>
-              <p class="subtitle">{{ puppy.description }}</p>
-            </div>
-          </div>
-        </div>
+
+                <div class="content">
+                  <p class="heading is-centered">About Me</p>
+                  <p class="subtitle">{{ puppy.description }}</p>
+                </div>
+
     </div>
   </div>
 </template>
